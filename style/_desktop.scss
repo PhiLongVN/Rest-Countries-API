@@ -1,0 +1,307 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  min-height: 100vh;
+
+  background: #202d36;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ============================================ */
+/*                     .HEAD                    */
+/* ============================================ */
+.head {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #2b3743;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // 1
+  h2 {
+    color: white;
+  }
+  // 2
+  .theme {
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+
+    .icon {
+      transform: translateY(2px);
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+/* =======================================-------------------------------===== */
+/*                     .MAIN                    */
+/* =====================================-------------------------------======= */
+main {
+  width: 100%;
+  padding: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ============================================ */
+/*                     SEACR                    */
+/* ============================================ */
+.search {
+  width: 100%;
+  display: none;
+}
+/* --------------- .MAIN-SEARCH --------------- */
+.main-search {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  //   .search-text
+  .search-text {
+    position: relative;
+    color: white;
+
+    input {
+      width: 150%;
+      padding: 0.5rem 1rem;
+      padding-left: 3rem;
+      border-radius: 10px;
+
+      background: #2b3743;
+      font-weight: 600;
+      color: white;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    ion-icon {
+      font-size: 1.5rem;
+      position: absolute;
+      top: 50%;
+      left: 3%;
+      transform: translateY(-50%);
+    }
+  }
+
+  //   .search-region
+  .search-region {
+    select {
+      padding: 0.8rem 1rem;
+      background: #2b3743;
+      color: white;
+      font-weight: 600;
+
+      option {
+        color: white;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+/* ---------------- .MAIN-SHOW ---------------- */
+.main-show {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+
+  .country-block {
+    background: #2b3743;
+    border-radius: 5px;
+    overflow: hidden;
+
+    // 1
+    img {
+      width: 100%;
+    }
+
+    // 2
+    .country-detail {
+      padding: 1rem;
+      color: white;
+
+      .name {
+        font-weight: 700;
+      }
+
+      .geo {
+        margin-top: 1rem;
+
+        span {
+          font-size: clamp(0.65rem, 1.5vw, 1rem);
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: 600;
+
+          div {
+            font-weight: 400;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ============================================ */
+/*                    .DETAIL                   */
+/* ============================================ */
+.detail {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  //   .back
+  .back {
+    cursor: pointer;
+    align-self: flex-start;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+
+      color: white;
+      border-radius: 5px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+      background: #2b3743;
+
+      cursor: pointer;
+      padding: 0.3rem 1.5rem;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+// .detail-block
+.detail-block {
+  width: 100%;
+
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  //   1
+  .img-flag {
+    width: 50%;
+    align-self: stretch;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  //   2
+  .detail-flag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    // -
+    h2 {
+      align-self: flex-start;
+      color: white;
+    }
+    // -
+    .geo-country {
+      width: 100%;
+      margin: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      color: white;
+
+      .geo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        span {
+          font-size: clamp(0.9rem, 1.5vw, 1rem);
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: 600;
+
+          div {
+            font-weight: 400;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+    // -
+    .border-country {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: flex-start;
+
+      .border {
+        color: white;
+        font-weight: 700;
+        margin-right: 1rem;
+        min-width: 20ch;
+      }
+
+      .borderblock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        span {
+          cursor: pointer;
+          border-radius: 10px;
+          background: #2b3743;
+          padding: 0.5rem 1rem;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+          color: white;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+}

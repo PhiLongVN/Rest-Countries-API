@@ -13,11 +13,11 @@
       <!--                   HEAD                    -->
       <!-- ========================================= -->
       <header class="head">
-        <h2></h2>
+        <h2>Where in the world?</h2>
 
         <div class="theme">
-          <img src="" alt="" />
-          <span></span>
+          <ion-icon class="icon" name="moon"></ion-icon>
+          <span>Dark Mode</span>
         </div>
       </header>
 
@@ -33,10 +33,21 @@
         <div class="search">
           <div class="main-search">
             <div class="search-text">
-              <img src="" alt="" />
+              <ion-icon name="search"></ion-icon>
               <input type="search" placeholder="Search for a country" />
             </div>
-            <div class="search-region"></div>
+
+            <div class="search-region">
+              <select name="languages" id="lang">
+                <option disabled selected>Filter by Region</option>
+
+                <option value="javascript">Africa</option>
+                <option value="php">America</option>
+                <option value="java">Asia</option>
+                <option value="golang">Europe</option>
+                <option value="python">Oceania</option>
+              </select>
+            </div>
           </div>
           <!-- ----------------- SHOW ------------------ -->
           <div class="main-show">
@@ -48,10 +59,76 @@
                 <div class="geo">
                   <span
                     >Population:
-                    <div></div>
+                    <div>81,555,444</div>
                   </span>
-                  <span> <div></div> </span>
-                  <span> <div></div> </span>
+                  <span>
+                    Region:
+                    <div>Europe</div>
+                  </span>
+                  <span>
+                    Capital:
+                    <div>Berlin</div>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="country-block">
+              <img src="./flag/Germany.png" alt="" />
+              <div class="country-detail">
+                <span class="name">Germany</span>
+                <div class="geo">
+                  <span
+                    >Population:
+                    <div>81,555,444</div>
+                  </span>
+                  <span>
+                    Region:
+                    <div>Europe</div>
+                  </span>
+                  <span>
+                    Capital:
+                    <div>Berlin</div>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="country-block">
+              <img src="./flag/Germany.png" alt="" />
+              <div class="country-detail">
+                <span class="name">Germany</span>
+                <div class="geo">
+                  <span
+                    >Population:
+                    <div>81,555,444</div>
+                  </span>
+                  <span>
+                    Region:
+                    <div>Europe</div>
+                  </span>
+                  <span>
+                    Capital:
+                    <div>Berlin</div>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="country-block">
+              <img src="./flag/Germany.png" alt="" />
+              <div class="country-detail">
+                <span class="name">Germany</span>
+                <div class="geo">
+                  <span
+                    >Population:
+                    <div>81,555,444</div>
+                  </span>
+                  <span>
+                    Region:
+                    <div>Europe</div>
+                  </span>
+                  <span>
+                    Capital:
+                    <div>Berlin</div>
+                  </span>
                 </div>
               </div>
             </div>
@@ -63,42 +140,81 @@
         <!-- ========================================= -->
         <article class="detail">
           <div class="back">
-            <button>Back</button>
+            <button><ion-icon name="arrow-back"></ion-icon>Back</button>
           </div>
 
           <div class="detail-block">
             <div class="img-flag">
-              <img src="" alt="" />
+              <img src="./flag/Abania.png" alt="" />
             </div>
 
             <div class="detail-flag">
-              <h2></h2>
+              <h2>Belgium</h2>
 
               <div class="geo-country">
-                <div class="geo1">
-                  <div><span></span></div>
-                  <div><span></span></div>
-                  <div><span></span></div>
-                  <div><span></span></div>
-                  <div><span></span></div>
+                <div class="geo geo1">
+                  <span
+                    >Native Name:
+                    <div>aaaaaaaaaaaaa</div></span
+                  >
+                  <span
+                    >Native Name:
+                    <div>aaaaaaaaaaaaa</div></span
+                  >
+                  <span
+                    >Native Name:
+                    <div>aaaaaaaaaaaaa</div></span
+                  >
+                  <span
+                    >Native Name:
+                    <div>aaaaaaaaaaaaa</div></span
+                  >
+                  <span
+                    >Native Name:
+                    <div>aaaaaaaaaaaaa</div></span
+                  >
                 </div>
 
-                <div class="geo2">
-                  <div><span></span></div>
-                  <div><span></span></div>
-                  <div><span></span></div>
+                <div class="geo geo2">
+                  <span
+                    >Native Name:
+                    <div>aaaaaaaaaaaaa</div></span
+                  >
+                  <span
+                    >Native Name:
+                    <div>aaaaaaaaaaaaa</div></span
+                  >
+                  <span
+                    >Native Name:
+                    <div>aaaaaaaaaaaaa</div></span
+                  >
                 </div>
               </div>
 
               <div class="border-country">
-                <span> Border Countries </span>
+                <span class="border"> Border Countries </span>
+                <div class="borderblock">
+                  <span>dd</span>
+                  <span>aa</span>
+                  <span>ww</span>
+                  <span>ffffffffffff</span>
+                  <span>qqqqqqqqqqqqqqqq</span>
+                  <span>qqqqqqqqqqqqqqqq</span>
+                </div>
               </div>
             </div>
           </div>
         </article>
       </main>
     </div>
-
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <script src="./script/script.js"></script>
   </body>
 </html>
