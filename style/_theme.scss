@@ -1,0 +1,176 @@
+body.dark {
+  background: #202d36;
+  transition: all 1s ease;
+  /* ------------------- .HEAD ------------------ */
+  .head {
+    background: #2b3743;
+    color: white;
+  }
+
+  /* ------------------- .MAIN-search ------------------ */
+  .main-search {
+    // .search-text
+    .search-text {
+      color: white;
+
+      input {
+        background: #2b3743;
+        color: white;
+
+        &::placeholder {
+          color: white;
+        }
+      }
+    }
+
+    // .search-region
+    .search-region {
+      background: #2b3743;
+      color: white;
+
+      option {
+        color: black;
+      }
+    }
+  }
+
+  /* ---------------- .MAIN-SHOW ---------------- */
+  .main-show {
+    .country-block {
+      background: #2b3743;
+
+      .country-detail {
+        color: white;
+      }
+    }
+  }
+
+  /* ------------------ main-.DETAIL ----------------- */
+  .detail {
+    .back {
+      button {
+        color: white;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        background: #2b3743;
+      }
+    }
+  }
+
+  .detail-block {
+    .detail-flag {
+      h2 {
+        color: white;
+      }
+
+      .geo-country {
+        color: white;
+      }
+
+      .border-country {
+        .border {
+          color: white;
+        }
+
+        .borderblock {
+          span {
+            background: #2b3743;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ============================================ */
+/*                     LIGHT                    */
+/* ============================================ */
+body.light {
+  background: #ffffff;
+  transition: all 1s ease;
+  /* ------------------- .HEAD ------------------ */
+  .head {
+    background: #ffffff;
+    color: #212224;
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ------------------- .MAIN-search ------------------ */
+  .main-search {
+    // .search-text
+    .search-text {
+      color: black;
+
+      input {
+        background: white;
+        color: #212224;
+        box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
+
+        &::placeholder {
+          color: #212224;
+        }
+      }
+    }
+
+    // .search-region
+    .search-region {
+      box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
+      background: #2b3743;
+      color: white;
+
+      option {
+        color: black;
+      }
+    }
+  }
+
+  /* ---------------- .MAIN-SHOW ---------------- */
+  .main-show {
+    .country-block {
+      background: #ffffff;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+
+      .country-detail {
+        color: #212224;
+      }
+    }
+  }
+
+  /* ------------------ main-.DETAIL ----------------- */
+  .detail {
+    .back {
+      button {
+        color: #212224;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        background: white;
+      }
+    }
+  }
+
+  .detail-block {
+    .detail-flag {
+      h2 {
+        color: #202d36;
+      }
+
+      .geo-country {
+        color: #202d36;
+      }
+
+      .border-country {
+        .border {
+          color: #202d36;
+        }
+
+        .borderblock {
+          span {
+            background: white;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            color: #202d36;
+          }
+        }
+      }
+    }
+  }
+}
