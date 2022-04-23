@@ -119,11 +119,16 @@ main {
   .country-block {
     border-radius: 5px;
     overflow: hidden;
+    cursor: pointer;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     // 1
     img {

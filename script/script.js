@@ -34,7 +34,7 @@ function handleTheme() {
 /*                  RENDER FLAG                 */
 /* ============================================ */
 const mainShow = document.querySelector('.main-show');
-const linkJob = 'https://restcountries.com/v3.1/all';
+const linkJob = 'https://restcountries.com/v2/all';
 async function fetchJob() {
   const res = await fetch(linkJob);
   const data = await res.json();
@@ -46,7 +46,7 @@ function createBlock(data) {
   return (block = `<div data-name="${data.name.common}" class="country-block">
   <img src="${data.flags.png}" alt="" />
   <div class="country-detail">
-    <span class="name">${data.name.common}</span>
+    <span class="name">${data.name}</span>
     <div class="geo">
       <span
         >Population:
@@ -68,7 +68,7 @@ function createBlock(data) {
 function renderBlock() {
   let listFlag = [];
   fetchJob().then((data) => {
-  console.log("renderBlock -> data", data)
+    console.log('renderBlock -> data', data);
     data.forEach((country) => {
       listFlag += createBlock(country);
       mainShow.innerHTML = listFlag;
@@ -134,7 +134,8 @@ function clickBLock() {
       fetchJob().then((data) => {
         data.forEach((country) => {
           if (country.name.common == a) {
-            console.log(country.borders);
+            createDetail(country);
+            
           }
         });
       });
@@ -154,38 +155,38 @@ function createDetail(data) {
     <div class="geo geo1">
       <span
         >Native Name:
-        <div>aaaaaaaaaaaaa</div></span
+        <div>${data.nativeName}</div></span
       >
       <span
         >Population:
-        <div>aaaaaaaaaaaaa</div></span
+        <div>${data.population}</div></span
       >
       <span
         >Region:
-        <div>aaaaaaaaaaaaa</div></span
+        <div>${data.region}</div></span
       >
       <span
         >Sub Region:
-        <div>aaaaaaaaaaaaa</div></span
+        <div>${data.subregion}</div></span
       >
       <span
         >Capital:
-        <div>aaaaaaaaaaaaa</div></span
+        <div>${data.capital}</div></span
       >
     </div>
 
     <div class="geo geo2">
       <span
         >Top Level Domain:
-        <div>aaaaaaaaaaaaa</div></span
+        <div>${data.independent}</div></span
       >
       <span
         >Currencies:
-        <div>aaaaaaaaaaaaa</div></span
+        <div>${data.currencies.forEach((key) => key.name)}</div></span
       >
       <span
         >Languages:
-        <div>aaaaaaaaaaaaa</div></span
+        <div>${data.languages.forEach((key) => key.name)}</div></span
       >
     </div>
   </div>
@@ -193,12 +194,23 @@ function createDetail(data) {
   <div class="border-country">
     <span class="border"> Border Countries </span>
     <div class="borderblock">
-     ${createBorder(data.border)}
+     ${createBorder(data.borders)}
     </div>
   </div>
 </div>`;
 }
 
 function createBorder(data) {
-  console.log(data);
+  if (data) {
+    let borderBlock = [];
+    data.map((key) => {
+      let block = ` <span>${key}</span>`;
+      borderBlock += block;
+    });
+    console.log('createBorder -> borderBlock', borderBlock);
+
+    return borderBlock;
+  } else {
+    return;
+  }
 }
