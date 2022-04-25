@@ -205,6 +205,32 @@ main {
       grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-top: 2rem;
+  padding: 0 0.5rem;
+  width: 100%;
+  max-height: 100vh;
+  overflow-y: scroll;
+  /* width */
+  /* Track */
+  /* Handle */
+}
+
+.main-show::-webkit-scrollbar {
+  width: 25px;
+}
+
+.main-show::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px grey;
+          box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+.main-show::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 200px;
+  background-image: url(../flag/vn.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .main-show .country-block {
@@ -233,6 +259,7 @@ main {
 
 .main-show .country-block img {
   width: 100%;
+  height: 100%;
 }
 
 .main-show .country-block .country-detail {
@@ -337,6 +364,8 @@ main {
 .detail-block .img-flag img {
   width: 100%;
   height: 100%;
+  -webkit-box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .detail-block .detail-flag {
@@ -346,9 +375,9 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -379,9 +408,9 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -457,6 +486,15 @@ main {
 .detail-block .detail-flag .border-country .borderblock span:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+.ten {
+  padding: 2rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #00ffcc;
+  border: 2px dashed brown;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.307);
 }
 
 @media screen and (max-width: 767.98px) {
@@ -556,8 +594,6 @@ main {
 
 body.dark {
   background: #202d36;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
   /* ------------------- .HEAD ------------------ */
   /* ------------------- .MAIN-search ------------------ */
   /* ---------------- .MAIN-SHOW ---------------- */
@@ -642,8 +678,6 @@ body.dark .detail-block .detail-flag .border-country .borderblock span {
 /* ============================================ */
 body.light {
   background: #ffffff;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
   /* ------------------- .HEAD ------------------ */
   /* ------------------- .MAIN-search ------------------ */
   /* ---------------- .MAIN-SHOW ---------------- */

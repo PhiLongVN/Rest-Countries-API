@@ -43,7 +43,7 @@ async function fetchJob() {
 }
 
 function createBlock(data) {
-  return (block = `<div data-name="${data.name.common}" class="country-block">
+  return (block = `<div data-name="${data.name}" class="country-block">
   <img src="${data.flags.png}" alt="" />
   <div class="country-detail">
     <span class="name">${data.name}</span>
@@ -68,7 +68,6 @@ function createBlock(data) {
 function renderBlock() {
   let listFlag = [];
   fetchJob().then((data) => {
-    console.log('renderBlock -> data', data);
     data.forEach((country) => {
       listFlag += createBlock(country);
       mainShow.innerHTML = listFlag;
@@ -93,9 +92,10 @@ function handleSearch() {
 
   fetchJob().then((data) => {
     data.forEach((country) => {
-      if (country.name.common.toLowerCase().includes(a)) {
+      if (country.name.toLowerCase().includes(a)) {
         listFlag += createBlock(country);
         mainShow.innerHTML = listFlag;
+        clickBLock();
       }
     });
   });
@@ -117,6 +117,7 @@ function handleSearchRegion() {
       if (country.region.toLowerCase().includes(a)) {
         listFlag += createBlock(country);
         mainShow.innerHTML = listFlag;
+        clickBLock();
       }
     });
   });
@@ -125,6 +126,9 @@ function handleSearchRegion() {
 /* ============================================ */
 /*                  CLICK FLAG                  */
 /* ============================================ */
+const detailBlock = document.querySelector('.detail-block');
+const search = document.querySelector('.search');
+const detail = document.querySelector('.detail');
 
 function clickBLock() {
   const flagBlock = document.querySelectorAll('.country-block');
@@ -133,9 +137,11 @@ function clickBLock() {
       let a = flag.dataset.name;
       fetchJob().then((data) => {
         data.forEach((country) => {
-          if (country.name.common == a) {
-            createDetail(country);
-            
+          if (country.name == a) {
+            let flagBlock = createDetail(country);
+            detailBlock.innerHTML = flagBlock;
+            detail.style.display = 'flex';
+            search.style.display = 'none';
           }
         });
       });
@@ -149,7 +155,7 @@ function createDetail(data) {
 </div>
 
 <div class="detail-flag">
-  <h2>${data.name.common}</h2>
+  <h2>${data.name}</h2>
 
   <div class="geo-country">
     <div class="geo geo1">
@@ -178,15 +184,15 @@ function createDetail(data) {
     <div class="geo geo2">
       <span
         >Top Level Domain:
-        <div>${data.independent}</div></span
+        <div>${data.topLevelDomain[0]}</div></span
       >
       <span
         >Currencies:
-        <div>${data.currencies.forEach((key) => key.name)}</div></span
+        <div>${data.currencies.map((key) => key.name)}</div></span
       >
       <span
         >Languages:
-        <div>${data.languages.forEach((key) => key.name)}</div></span
+        <div>${data.languages.map((key) => key.name)}</div></span
       >
     </div>
   </div>
@@ -207,10 +213,23 @@ function createBorder(data) {
       let block = ` <span>${key}</span>`;
       borderBlock += block;
     });
-    console.log('createBorder -> borderBlock', borderBlock);
 
     return borderBlock;
   } else {
-    return;
+    let block = ` <span>None</span>`;
+    borderBlock = block;
+    return borderBlock;
   }
+}
+
+/* ============================================ */
+/*               CLICK BACK BUTTON              */
+/* ============================================ */
+const backBtn = document.querySelector('.back');
+
+backBtn.addEventListener('click', returnHome);
+
+function returnHome() {
+  search.style.display = 'block';
+  detail.style.display = 'none';
 }
